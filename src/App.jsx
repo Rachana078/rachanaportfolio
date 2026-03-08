@@ -5,6 +5,7 @@ import TechExperience from './components/TechExperience'
 import Education from './components/Education'
 import Leadership from './components/Leadership'
 import SkillsMatrix from './components/SkillsMatrix'
+import Contact from './components/Contact'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Education />
         <Leadership />
         <SkillsMatrix />
+        <Contact />
       </main>
       <footer className="border-t border-zinc-800 py-10 text-center">
         <p className="font-mono text-zinc-600 text-xs tracking-wider">
