@@ -7,6 +7,7 @@ const links = [
   { label: 'Education', href: '#education' },
   { label: 'Leadership', href: '#leadership' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Nav() {
