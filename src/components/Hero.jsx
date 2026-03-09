@@ -1,3 +1,4 @@
+
 export default function Hero() {
   return (
     <section id="about" className="min-h-screen flex items-center relative overflow-hidden">
@@ -12,6 +13,7 @@ export default function Hero() {
       />
 
       <div className="max-w-6xl mx-auto px-6 py-32 relative">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-12">
         <div className="max-w-3xl">
           <p className="font-mono text-cyan-400 text-xs tracking-widest mb-6 uppercase">
           </p>
@@ -46,6 +48,18 @@ export default function Hero() {
             >
               Skills &amp; Stack
             </a>
+          </div>
+        </div>
+
+          {/* Profile image */}
+          <div className="shrink-0">
+            <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-zinc-700">
+              <img
+                src="/Rachana_Image.png"
+                alt="Rachana"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </div>
