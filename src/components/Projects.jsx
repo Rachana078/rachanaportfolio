@@ -3,7 +3,23 @@ import SectionHeader from './SectionHeader'
 const projects = [
   {
     number: '01',
+    title: 'StudyPack',
+    url: 'https://studypack-brown.vercel.app/',
+    description:
+      'An AI-powered study tool that converts PDF/DOCX files into flashcards and quizzes. Features spaced repetition scheduling, an AI chat grounded in uploaded material, daily streaks, and public shareable study sets.',
+    tags: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'Supabase', 'Groq API', 'Vercel'],
+    highlights: [
+      'Converts PDF/DOCX to flashcards & quizzes using Groq LLaMA 3.3 70B',
+      'Spaced repetition (SM-2 algorithm) based on user performance',
+      'AI chat grounded in uploaded content, no hallucinations outside material',
+      'Three-theme UI (pink, light, dark) with hydration-safe switching',
+      'PDF export, public shareable links, and daily study streak tracking',
+    ],
+  },
+  {
+    number: '02',
     title: 'AI Art Studio',
+    url: null,
     description:
       'A creative platform leveraging generative AI to empower artists and non-artists alike. Features real-time style transfer, an accessible prompt engineering UI, and inclusive controls designed for users of all skill levels.',
     tags: ['React', 'Generative AI', 'API Integration', 'Accessible UI'],
@@ -14,7 +30,7 @@ const projects = [
     ],
   },
   {
-    number: '02',
+    number: '03',
     title: 'Smart Task Management Tool',
     description:
       'An intuitive productivity application with intelligent task prioritization, deadline tracking, and a distraction-free interface. Built with attention to user workflow, cognitive load, and long-term usability.',
@@ -77,6 +93,20 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+
+              {project.url && (
+                <div className="mt-4">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-mono text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    View Live
+                    <span>&#8599;</span>
+                  </a>
+                </div>
+              )}
             </div>
           ))}
         </div>
