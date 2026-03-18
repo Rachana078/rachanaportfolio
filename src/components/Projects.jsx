@@ -3,6 +3,23 @@ import SectionHeader from './SectionHeader'
 const projects = [
   {
     number: '01',
+    title: 'Looply',
+    url: 'https://looply.rachanap.com/',
+    description:
+      'A full-stack Jira-inspired project management app with real-time collaboration, role-based access control, and a rich commenting system with @mentions and notifications.',
+    tags: ['React 18', 'TypeScript', 'Spring Boot 3', 'Java 21', 'PostgreSQL', 'WebSockets', 'JWT', 'Docker', 'Flyway', 'Supabase'],
+    highlights: [
+      'JWT auth with access token + HTTP-only refresh token cookie rotation and email verification via Resend',
+      'Real-time Kanban boards and comments using WebSockets (STOMP) — changes appear instantly without page refresh',
+      'Role-based access control with Owner, Admin, and Member roles across workspaces and projects',
+      '@mention system in comments with dropdown autocomplete, triggering in-app and email notifications',
+      'Automatic ticket history tracking — every field change logged with timestamp and author',
+      'Schema evolution managed with Flyway across 10 versioned SQL migration scripts',
+      'Deployed backend on Render (Docker), frontend on custom domain, database on Supabase',
+    ],
+  },
+  {
+    number: '02',
     title: 'StudyPack',
     url: 'https://studypack-brown.vercel.app/',
     description:
@@ -17,7 +34,7 @@ const projects = [
     ],
   },
   {
-    number: '02',
+    number: '03',
     title: 'AI Art Studio',
     url: null,
     description:
@@ -30,7 +47,7 @@ const projects = [
     ],
   },
   {
-    number: '03',
+    number: '04',
     title: 'Smart Task Management Tool',
     description:
       'An intuitive productivity application with intelligent task prioritization, deadline tracking, and a distraction-free interface. Built with attention to user workflow, cognitive load, and long-term usability.',
