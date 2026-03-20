@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
+import FadeUp from './FadeUp'
 
 const experiences = [
   {
@@ -45,65 +47,51 @@ const experiences = [
   },
 ]
 
-const systemHighlights = [
-  { label: 'Dell Systems', detail: 'OptiPlex · Latitude · Precision' },
-  { label: 'OS Support', detail: 'Windows · macOS · Linux' },
-  { label: 'Troubleshooting', detail: 'Hardware · Software · Network' },
-  { label: 'Deployment', detail: 'Imaging · Config · Rollout' },
-]
-
 export default function TechExperience() {
   return (
-    <section id="experience" className="py-24 border-t border-zinc-800/50">
+    <section id="experience" className="py-24 border-t border-stone-200 dark:border-zinc-800">
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader
-          label="02 / Experience"
-          title="Technical Experience"
-          subtitle="IT administration, hardware deployment, and systems support."
-        />
+        <FadeUp>
+          <SectionHeader
+            label="02 / Experience"
+            title="Technical Experience"
+            subtitle="Building scalable systems, shipping features, and solving real problems with code."
+            color="amber"
+          />
+        </FadeUp>
 
         <div className="space-y-6">
-          {experiences.map((exp) => (
-            <div
-              key={exp.role}
-              className="border border-zinc-800 rounded-lg p-8 bg-zinc-900/20"
-            >
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                <div>
-                  <h3 className="text-lg font-semibold text-zinc-100">{exp.role}</h3>
-                  <p className="text-zinc-500 text-sm mt-1 font-mono">{exp.org}</p>
-                </div>
-                <div className="text-right flex flex-col items-end gap-2">
-                  <span className="font-mono text-xs px-2 py-1 border border-cyan-400/30 text-cyan-400 rounded">
-                    {exp.type}
-                  </span>
-                  <span className="font-mono text-xs text-zinc-600">{exp.period}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-3">
-                {exp.bullets.map((b) => (
-                  <li key={b} className="flex gap-3 text-sm text-zinc-400 leading-relaxed">
-                    <span className="text-cyan-400/50 mt-1 shrink-0">&#9658;</span>
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-          {/* System capability grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {systemHighlights.map(({ label, detail }) => (
-              <div
-                key={label}
-                className="border border-zinc-800 rounded-lg p-4 bg-zinc-900/20"
+          {experiences.map((exp, i) => (
+            <FadeUp key={exp.role} delay={i * 0.1}>
+              <motion.div
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border-l-4 border-amber-200 dark:border-amber-800"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.2 }}
               >
-                <p className="text-zinc-200 text-sm font-medium mb-1">{label}</p>
-                <p className="font-mono text-zinc-600 text-xs leading-relaxed">{detail}</p>
-              </div>
-            ))}
-          </div>
+                <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                  <div>
+                    <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{exp.role}</h3>
+                    <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1 font-mono">{exp.org}</p>
+                  </div>
+                  <div className="text-right flex flex-col items-end gap-2">
+                    <span className="font-mono text-xs px-2 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-400 dark:text-amber-300 border border-amber-200 dark:border-amber-800 rounded-lg">
+                      {exp.type}
+                    </span>
+                    <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{exp.period}</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3">
+                  {exp.bullets.map((b) => (
+                    <li key={b} className="flex gap-3 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                      <span className="text-amber-300 dark:text-amber-600 mt-1 shrink-0">&#9658;</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </FadeUp>
+          ))}
         </div>
       </div>
     </section>

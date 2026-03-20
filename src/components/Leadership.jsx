@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import SectionHeader from './SectionHeader'
+import FadeUp from './FadeUp'
 
 const roles = [
   {
@@ -18,40 +20,45 @@ const roles = [
 
 export default function Leadership() {
   return (
-    <section id="leadership" className="py-24 border-t border-zinc-800/50">
+    <section id="leadership" className="py-24 border-t border-stone-200 dark:border-zinc-800">
       <div className="max-w-6xl mx-auto px-6">
-        <SectionHeader
-          label="04 / Leadership"
-          title="Leadership & Volunteer"
-          subtitle="Community impact through technical skill, mentorship, and collaboration."
-        />
+        <FadeUp>
+          <SectionHeader
+            label="04 / Leadership"
+            title="Leadership & Volunteer"
+            subtitle="Community impact through technical skill, mentorship, and collaboration."
+            color="emerald"
+          />
+        </FadeUp>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {roles.map((role) => (
-            <div
-              key={role.title}
-              className="border border-zinc-800 rounded-lg p-8 bg-zinc-900/20 hover:border-zinc-600 transition-colors duration-300"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <span className="font-mono text-xs px-2 py-1 border border-zinc-700 text-zinc-400 rounded">
-                  {role.context}
-                </span>
-                <span className="font-mono text-xs text-zinc-600">{role.period}</span>
-              </div>
+          {roles.map((role, i) => (
+            <FadeUp key={role.title} delay={i * 0.1}>
+              <motion.div
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border-l-4 border-emerald-200 dark:border-emerald-800"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="flex items-start justify-between mb-5">
+                  <span className="font-mono text-xs px-2 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-400 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-lg">
+                    {role.context}
+                  </span>
+                  <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{role.period}</span>
+                </div>
 
-              <h3 className="text-lg font-semibold text-zinc-100 mb-3">{role.title}</h3>
+                <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100 mb-3">{role.title}</h3>
+                <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-5">{role.description}</p>
 
-              <p className="text-zinc-400 text-sm leading-relaxed mb-5">{role.description}</p>
-
-              <ul className="space-y-2">
-                {role.contributions.map((c) => (
-                  <li key={c} className="flex gap-3 text-xs text-zinc-500 leading-relaxed">
-                    <span className="text-cyan-400/40 shrink-0 mt-0.5">&#9658;</span>
-                    {c}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="space-y-2">
+                  {role.contributions.map((c) => (
+                    <li key={c} className="flex gap-3 text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                      <span className="text-emerald-300 dark:text-emerald-600 shrink-0 mt-0.5">&#9658;</span>
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </FadeUp>
           ))}
         </div>
       </div>
