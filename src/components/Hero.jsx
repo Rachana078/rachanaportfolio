@@ -92,7 +92,7 @@ export default function Hero() {
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-full bg-purple-100 dark:bg-purple-900/40" />
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-2xl relative">
               <img
-                src="/Rachana_Image.png"
+                src="/Rachana_Image.jpg"
                 alt="Rachana"
                 className="w-full h-full object-cover object-top"
               />
