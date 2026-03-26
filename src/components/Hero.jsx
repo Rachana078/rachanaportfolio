@@ -9,26 +9,13 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section id="about" className="min-h-screen flex items-center relative overflow-hidden">
-      <motion.div
-        className="absolute top-10 right-10 w-96 h-96 bg-purple-100 dark:bg-purple-900/20 rounded-full blur-3xl opacity-60 pointer-events-none"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.6 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-      />
-      <motion.div
-        className="absolute bottom-10 left-0 w-80 h-80 bg-amber-100 dark:bg-amber-900/20 rounded-full blur-3xl opacity-50 pointer-events-none"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 0.5 }}
-        transition={{ duration: 1.2, delay: 0.2, ease: 'easeOut' }}
-      />
-      <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-pink-100 dark:bg-pink-900/10 rounded-full blur-3xl opacity-40 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 py-32 relative">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           <div className="max-w-3xl">
             <motion.div {...fadeUp(0.1)}>
-              <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 text-purple-400 dark:text-purple-300 text-xs font-mono font-semibold px-3 py-1.5 rounded-full mb-6 tracking-widest uppercase">
-                <span className="w-2 h-2 rounded-full bg-purple-300 dark:bg-purple-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 text-xs font-mono font-semibold px-3 py-1.5 rounded-full mb-6 tracking-widest uppercase">
+                <span className="w-2 h-2 rounded-full bg-white dark:bg-zinc-900 animate-pulse" />
                 Open to opportunities
               </div>
             </motion.div>
@@ -41,7 +28,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.div {...fadeUp(0.3)}>
-              <div className="w-16 h-1.5 bg-purple-200 dark:bg-purple-700 rounded-full mb-8" />
+              <div className="w-16 h-1 bg-zinc-900 dark:bg-zinc-100 rounded-full mb-8" />
             </motion.div>
 
             <motion.p
@@ -89,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-full bg-purple-100 dark:bg-purple-900/40" />
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-full bg-zinc-900/15 dark:bg-zinc-900/60" />
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white dark:border-zinc-800 shadow-2xl relative">
               <img
                 src="/Rachana_Image.jpg"

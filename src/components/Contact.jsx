@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="py-24 border-t border-stone-200 dark:border-zinc-800">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <FadeUp>
-          <span className="inline-block font-mono text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full mb-4 uppercase bg-orange-100 text-orange-400 dark:bg-orange-950/40 dark:text-orange-300">
+          <span className="inline-block font-mono text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full mb-4 uppercase bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900">
             06 / Contact
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-zinc-100 mb-4">Let's Connect</h2>

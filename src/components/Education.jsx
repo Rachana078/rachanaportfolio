@@ -49,11 +49,11 @@ export default function Education() {
           {degrees.map((item, i) => (
             <FadeUp key={item.degree + item.field} delay={i * 0.1}>
               <motion.div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border-t-4 border-blue-200 dark:border-blue-800"
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-stone-100 dark:border-zinc-800"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
-                <span className="inline-block font-mono text-xs font-semibold px-2 py-1 bg-blue-50 dark:bg-blue-950/30 text-blue-400 dark:text-blue-300 rounded-lg mb-5 uppercase tracking-widest">
+                <span className="inline-block font-mono text-xs font-semibold px-2 py-1 bg-stone-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 rounded-md mb-5 uppercase tracking-widest">
                   Degree
                 </span>
                 <h3 className="text-xl font-bold text-zinc-900 dark:text-zinc-100 mb-1">{item.degree}</h3>
@@ -61,7 +61,7 @@ export default function Education() {
                 <p className="font-mono text-zinc-400 dark:text-zinc-500 text-xs mb-1">{item.university}</p>
                 <p className="font-mono text-zinc-400 dark:text-zinc-500 text-xs mb-1">{item.period}</p>
                 {item.gpa && (
-                  <p className="font-mono text-blue-400 dark:text-blue-300 text-xs font-semibold mb-6">
+                  <p className="font-mono text-zinc-500 dark:text-zinc-400 text-xs font-semibold mb-6">
                     GPA &nbsp;·&nbsp; {item.gpa}
                   </p>
                 )}
@@ -73,7 +73,7 @@ export default function Education() {
                   <ul className="space-y-2">
                     {item.coursework.map((course) => (
                       <li key={course} className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-200 dark:bg-blue-700 shrink-0" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-stone-300 dark:bg-zinc-600 shrink-0" />
                         {course}
                       </li>
                     ))}

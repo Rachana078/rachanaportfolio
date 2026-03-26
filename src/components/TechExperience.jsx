@@ -64,7 +64,7 @@ export default function TechExperience() {
           {experiences.map((exp, i) => (
             <FadeUp key={exp.role} delay={i * 0.1}>
               <motion.div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border-l-4 border-amber-200 dark:border-amber-800"
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-stone-100 dark:border-zinc-800"
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
               >
@@ -74,7 +74,7 @@ export default function TechExperience() {
                     <p className="text-zinc-500 dark:text-zinc-400 text-sm mt-1 font-mono">{exp.org}</p>
                   </div>
                   <div className="text-right flex flex-col items-end gap-2">
-                    <span className="font-mono text-xs px-2 py-1 bg-amber-50 dark:bg-amber-950/30 text-amber-400 dark:text-amber-300 border border-amber-200 dark:border-amber-800 rounded-lg">
+                    <span className="font-mono text-xs px-2 py-1 bg-stone-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 rounded-md">
                       {exp.type}
                     </span>
                     <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{exp.period}</span>
@@ -84,7 +84,7 @@ export default function TechExperience() {
                 <ul className="space-y-3">
                   {exp.bullets.map((b) => (
                     <li key={b} className="flex gap-3 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                      <span className="text-amber-300 dark:text-amber-600 mt-1 shrink-0">&#9658;</span>
+                      <span className="text-zinc-300 dark:text-zinc-600 mt-1 shrink-0">&#9658;</span>
                       {b}
                     </li>
                   ))}

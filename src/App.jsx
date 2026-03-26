@@ -26,7 +26,7 @@ export default function App() {
         </main>
         <footer className="border-t border-stone-200 dark:border-zinc-800 py-10 text-center">
           <p className="font-mono text-stone-400 dark:text-zinc-600 text-xs tracking-wider">
-            &copy; {new Date().getFullYear()} Rachana · Built with React &amp; Tailwind CSS
+            &copy; {new Date().getFullYear()} Rachana
           </p>
         </footer>
       </div>

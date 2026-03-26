@@ -35,12 +35,12 @@ export default function Leadership() {
           {roles.map((role, i) => (
             <FadeUp key={role.title} delay={i * 0.1}>
               <motion.div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border-l-4 border-emerald-200 dark:border-emerald-800"
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 shadow-sm border border-stone-100 dark:border-zinc-800"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.2 }}
               >
                 <div className="flex items-start justify-between mb-5">
-                  <span className="font-mono text-xs px-2 py-1 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-400 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 rounded-lg">
+                  <span className="font-mono text-xs px-2 py-1 bg-stone-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 rounded-md">
                     {role.context}
                   </span>
                   <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{role.period}</span>
@@ -52,7 +52,7 @@ export default function Leadership() {
                 <ul className="space-y-2">
                   {role.contributions.map((c) => (
                     <li key={c} className="flex gap-3 text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                      <span className="text-emerald-300 dark:text-emerald-600 shrink-0 mt-0.5">&#9658;</span>
+                      <span className="text-zinc-300 dark:text-zinc-600 shrink-0 mt-0.5">&#9658;</span>
                       {c}
                     </li>
                   ))}

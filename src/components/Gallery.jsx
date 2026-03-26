@@ -8,21 +8,14 @@ const photos = [
   { src: '/gallery/photo-output 2.png', caption: 'Governance Ambassador' },
 ]
 
-const placeholderColors = [
-  'from-rose-200 to-pink-100',
-  'from-violet-200 to-purple-100',
-  'from-amber-200 to-yellow-100',
-  'from-emerald-200 to-green-100',
-  'from-blue-200 to-sky-100',
-  'from-orange-200 to-amber-100',
-]
+const placeholderColors = ['from-stone-200 to-stone-100']
 
 export default function Gallery() {
   return (
     <section id="gallery" className="py-24 border-t border-stone-200 dark:border-zinc-800 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-10">
         <FadeUp>
-          <span className="inline-block font-mono text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full mb-4 uppercase bg-pink-100 text-pink-400 dark:bg-pink-950/40 dark:text-pink-300">
+          <span className="inline-block font-mono text-xs font-semibold tracking-widest px-3 py-1.5 rounded-full mb-4 uppercase bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900">
             Moments
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-zinc-100">Life in Frames</h2>

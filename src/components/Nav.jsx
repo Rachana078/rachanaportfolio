@@ -3,14 +3,14 @@ import { motion } from 'framer-motion'
 import { useTheme } from '../ThemeContext'
 
 const links = [
-  { label: 'About', href: '#about', color: 'hover:bg-rose-100 hover:text-rose-500 dark:hover:bg-rose-950/40 dark:hover:text-rose-300' },
-  { label: 'Projects', href: '#projects', color: 'hover:bg-violet-100 hover:text-violet-500 dark:hover:bg-violet-950/40 dark:hover:text-violet-300' },
-  { label: 'Experience', href: '#experience', color: 'hover:bg-amber-100 hover:text-amber-500 dark:hover:bg-amber-950/40 dark:hover:text-amber-300' },
-  { label: 'Education', href: '#education', color: 'hover:bg-blue-100 hover:text-blue-500 dark:hover:bg-blue-950/40 dark:hover:text-blue-300' },
-  { label: 'Leadership', href: '#leadership', color: 'hover:bg-emerald-100 hover:text-emerald-500 dark:hover:bg-emerald-950/40 dark:hover:text-emerald-300' },
-  { label: 'Skills', href: '#skills', color: 'hover:bg-violet-100 hover:text-violet-500 dark:hover:bg-violet-950/40 dark:hover:text-violet-300' },
-  { label: 'Moments', href: '#gallery', color: 'hover:bg-pink-100 hover:text-pink-500 dark:hover:bg-pink-950/40 dark:hover:text-pink-300' },
-  { label: 'Contact', href: '#contact', color: 'hover:bg-orange-100 hover:text-orange-500 dark:hover:bg-orange-950/40 dark:hover:text-orange-300' },
+  { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Education', href: '#education' },
+  { label: 'Leadership', href: '#leadership' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Moments', href: '#gallery' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 function SunIcon() {
@@ -29,8 +29,25 @@ function MoonIcon() {
   )
 }
 
+function HamburgerIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+      <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
+    </svg>
+  )
+}
+
+function CloseIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+      <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
+    </svg>
+  )
+}
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const { dark, toggle } = useTheme()
 
   useEffect(() => {
@@ -42,7 +59,7 @@ export default function Nav() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || menuOpen
           ? 'bg-[#fdf8f3]/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-amber-100 dark:border-zinc-800 shadow-sm'
           : 'bg-transparent'
       }`}
@@ -52,12 +69,13 @@ export default function Nav() {
           rachana.dev
         </a>
 
+        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
-          {links.map(({ label, href, color }) => (
+          {links.map(({ label, href }) => (
             <motion.a
               key={href}
               href={href}
-              className={`text-zinc-500 dark:text-zinc-400 text-sm font-medium px-3 py-1.5 rounded-full transition-colors duration-150 ${color}`}
+              className="text-zinc-500 dark:text-zinc-400 text-sm font-medium px-3 py-1.5 rounded-full transition-colors duration-150 hover:bg-stone-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15 }}
@@ -65,8 +83,6 @@ export default function Nav() {
               {label}
             </motion.a>
           ))}
-
-          {/* Theme toggle */}
           <motion.button
             onClick={toggle}
             className="ml-2 p-2 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-stone-200 dark:hover:bg-zinc-800 transition-colors duration-150"
@@ -78,7 +94,49 @@ export default function Nav() {
             {dark ? <SunIcon /> : <MoonIcon />}
           </motion.button>
         </div>
+
+        {/* Mobile controls */}
+        <div className="flex md:hidden items-center gap-2">
+          <motion.button
+            onClick={toggle}
+            className="p-2 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-stone-200 dark:hover:bg-zinc-800 transition-colors duration-150"
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle theme"
+          >
+            {dark ? <SunIcon /> : <MoonIcon />}
+          </motion.button>
+          <motion.button
+            onClick={() => setMenuOpen(o => !o)}
+            className="p-2 rounded-full text-zinc-500 dark:text-zinc-400 hover:bg-stone-200 dark:hover:bg-zinc-800 transition-colors duration-150"
+            whileTap={{ scale: 0.9 }}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <CloseIcon /> : <HamburgerIcon />}
+          </motion.button>
+        </div>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.2 }}
+          className="md:hidden bg-[#fdf8f3]/95 dark:bg-zinc-950/95 backdrop-blur-sm border-b border-amber-100 dark:border-zinc-800 px-6 pb-4 flex flex-col gap-1"
+        >
+          {links.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setMenuOpen(false)}
+              className="text-zinc-500 dark:text-zinc-400 text-sm font-medium px-3 py-2 rounded-full transition-colors duration-150 hover:bg-stone-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+            >
+              {label}
+            </a>
+          ))}
+        </motion.div>
+      )}
     </nav>
   )
 }
